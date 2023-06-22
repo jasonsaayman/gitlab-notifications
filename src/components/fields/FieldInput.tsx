@@ -31,7 +31,7 @@ export const FieldInput: React.FC<IProps> = ({
 
           <input
             type={type}
-            className="appearance-none block w-full rounded-sm bg-gray-800 text-white text-xs py-1.5 px-4 mb-2 focus:outline-none"
+            className="appearance-none block w-full rounded-sm bg-gray-700 text-white text-xs py-1.5 px-4 mb-2 focus:outline-none"
             id={input.name}
             placeholder={placeholder}
             required={required}
