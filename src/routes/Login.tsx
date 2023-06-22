@@ -1,23 +1,20 @@
 const { ipcRenderer } = require('electron');
 
-import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, FormRenderProps } from 'react-final-form';
-import { shell } from 'electron';
+import React, { useCallback, useContext, useEffect } from 'react';
 
-import { AppContext } from '../context/App';
-import { AuthTokenOptions } from '../types';
 import { FieldInput } from '../components/fields/FieldInput';
+import { AppContext } from '../context/App';
 interface IValues {
-  token?: string;
-  hostname?: string;
+  apiToken?: string;
+  userName?: string;
+  projectId?: string;
 }
-
 
 export const LoginRoute: React.FC = () => {
   const history = useHistory();
-  const { isLoggedIn, login, validateToken } = useContext(AppContext);
-  const [isValidToken, setIsValidToken] = useState<boolean>(true);
+  const { isLoggedIn } = useContext(AppContext);
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -26,37 +23,23 @@ export const LoginRoute: React.FC = () => {
     }
   }, [isLoggedIn]);
 
-  const loginUser = useCallback(async () => {
-    try {
-      await login();
-    } catch (err) {
-      // Skip
-    }
-  }, []);
-
-  const openLink = useCallback((url: string) => {
-    shell.openExternal(url);
-  }, []);
+  // const openLink = useCallback((url: string) => {
+  //   shell.openExternal(url);
+  // }, []);
 
   const submit = useCallback(async (data: IValues) => {
-    setIsValidToken(true);
-    try {
-      await validateToken(data as AuthTokenOptions);
-      history.goBack();
-    } catch (err) {
-      setIsValidToken(false);
-    }
+   
   }, []);
 
   const renderForm = (formProps: FormRenderProps) => {
-    const { handleSubmit, submitting, pristine, values } = formProps;
+    const { handleSubmit, submitting, pristine } = formProps;
 
     return (
       <form onSubmit={handleSubmit}>
         <FieldInput
           name="apiToken"
           label="API Token"
-          placeholder='xxxxx-xxxxxxxxxxxxxx-xxxxx          '
+          placeholder='xxxxx-xxxxxxxxxxxxxx-xxxxx'
         />
 
         <FieldInput
