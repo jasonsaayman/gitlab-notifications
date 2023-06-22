@@ -8,9 +8,7 @@ import {
 
 import { AppContext, AppProvider } from './context/App';
 import { Loading } from './components/Loading';
-import { LoginEnterpriseRoute } from './routes/LoginEnterprise';
 import { LoginRoute } from './routes/Login';
-import { LoginWithToken } from './routes/LoginWithToken';
 import { NotificationsRoute } from './routes/Notifications';
 import { SettingsRoute } from './routes/Settings';
 import { Sidebar } from './components/Sidebar';
@@ -46,8 +44,6 @@ export const App = () => {
             <PrivateRoute path="/" exact component={NotificationsRoute} />
             <PrivateRoute path="/settings" exact component={SettingsRoute} />
             <Route path="/login" component={LoginRoute} />
-            <Route path="/login-enterprise" component={LoginEnterpriseRoute} />
-            <Route path="/login-token" component={LoginWithToken} />
           </Switch>
         </div>
       </Router>
