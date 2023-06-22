@@ -23,7 +23,7 @@ export const FieldInput: React.FC<IProps> = ({
       {({ input, meta: { touched, error } }) => (
         <div className="mt-2">
           <label
-            className="block tracking-wide text-grey-dark text-sm font-semibold mb-2"
+            className="block dark:text-white text-xs mb-2"
             htmlFor={input.name}
           >
             {label}
