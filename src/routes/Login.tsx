@@ -4,7 +4,6 @@ import React, { useCallback, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { AppContext } from '../context/App';
-import { Logo } from '../components/Logo';
 
 export const LoginRoute: React.FC = () => {
   const history = useHistory();
@@ -30,10 +29,9 @@ export const LoginRoute: React.FC = () => {
 
   return (
     <div className="flex flex-1 flex-col justify-center items-center p-4 bg-white dark:bg-gray-dark dark:text-white">
-      <Logo className="w-16 h-16" isDark />
 
       <div className="my-4 px-2.5 py-1.5 font-semibold text-center">
-        GitHub Notifications <br /> on your menu bar.
+        GitLab Notifications <br /> on your menu bar.
       </div>
 
       <button
@@ -41,23 +39,7 @@ export const LoginRoute: React.FC = () => {
         onClick={loginUser}
         aria-label="Login with GitHub"
       >
-        Login to GitHub
-      </button>
-
-      <button
-        className={loginButtonClass}
-        onClick={() => history.push('/login-enterprise')}
-        aria-label="Login with GitHub Enterprise"
-      >
-        Login to GitHub Enterprise
-      </button>
-
-      <button
-        className="bg-none hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-300 mt-4 focus:outline-none"
-        onClick={() => history.push('/login-token')}
-        aria-label="Login with Personal Token"
-      >
-        <small>or login with a personal token</small>
+        Login to GitLab
       </button>
     </div>
   );
