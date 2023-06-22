@@ -71,7 +71,7 @@ export const LoginRoute: React.FC = () => {
       <div className="flex flex-1 flex-col justify-center items-center p-4">
         <div className="my-4 px-2.5 py-1.5 font-semibold text-center">
           GitLab Notifications <br /> on your menu bar. <br />
-          <span className='font-normal text-sm'>Fill in the values below to get started!</span>
+          <span className='font-normal text-sm'>Add a project to get started!</span>
         </div>
       </div>
       <div className="flex-1 px-8">
