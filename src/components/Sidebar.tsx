@@ -3,22 +3,16 @@ import { ipcRenderer, shell } from 'electron';
 import React, { useCallback, useContext, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Logo } from '../components/Logo';
 import { AppContext } from '../context/App';
 import { IconCog } from '../icons/Cog';
 import { IconQuit } from '../icons/Quit';
 import { IconRefresh } from '../icons/Refresh';
-import { Constants } from '../utils/constants';
 
 export const Sidebar: React.FC = () => {
   const history = useHistory();
 
   const { isLoggedIn } = useContext(AppContext);
   const { notifications, fetchNotifications } = useContext(AppContext);
-
-  const onOpenBrowser = useCallback(() => {
-    shell.openExternal(`https://github.com/${Constants.REPO_SLUG}`);
-  }, []);
 
   const onOpenGitHubNotifications = useCallback(() => {
     shell.openExternal(`https://github.com/notifications`);
@@ -41,11 +35,6 @@ export const Sidebar: React.FC = () => {
   return (
     <div className="flex flex-col fixed left-14 w-14 -ml-14 h-full bg-gray-sidebar overflow-y-auto	">
       <div className="flex flex-col flex-1 items-center py-4">
-        <Logo
-          className="w-5 my-3 mx-auto cursor-pointer"
-          data-testid="gitify-logo"
-          onClick={onOpenBrowser}
-        />
 
         <div
           className={`flex justify-around self-stretch items-center my-1 py-1 px-2 text-xs font-extrabold cursor-pointer ${
