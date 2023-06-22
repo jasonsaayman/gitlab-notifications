@@ -56,16 +56,19 @@ export const LoginRoute: React.FC = () => {
         <FieldInput
           name="apiToken"
           label="API Token"
+          placeholder='xxxxx-xxxxxxxxxxxxxx-xxxxx          '
         />
 
         <FieldInput
           name="projectId"
           label="Project ID"
+          placeholder='1212898'
         />
 
         <FieldInput
           name="userName"
           label="User Name"
+          placeholder='johndoe'
         />
 
         <button
