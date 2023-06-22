@@ -78,16 +78,16 @@ export const LoginRoute: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-center items-center p-4 bg-white dark:bg-gray-dark dark:text-white">
-      <div className="my-4 px-2.5 py-1.5 font-semibold text-center">
-        GitLab Notifications <br /> on your menu bar. <br />
-        <span className='font-normal text-sm'>Fill in the values below to get started!</span>
+    <div>
+      <div className="flex flex-1 flex-col justify-center items-center p-4 bg-white dark:bg-gray-dark dark:text-white">
+        <div className="my-4 px-2.5 py-1.5 font-semibold text-center">
+          GitLab Notifications <br /> on your menu bar. <br />
+          <span className='font-normal text-sm'>Fill in the values below to get started!</span>
+        </div>
       </div>
-
-      <div className="flex-1 px-2">
+      <div className="flex-1 px-8 bg-white dark:bg-gray-dark dark:text-white">
         <Form
           onSubmit={submit}
-          // validate={validate}
         >
           {renderForm}
         </Form>
