@@ -57,21 +57,6 @@ export const LoginRoute: React.FC = () => {
           name="token"
           label="Token"
           placeholder="The 40 characters token generated on GitHub"
-          helpText={
-            <>
-              To generate a token, go to GitHub,{' '}
-              <a
-                className="underline hover:text-gray-500 dark:hover:text-gray-300  cursor-pointer"
-                onClick={() => openLink('https://github.com/settings/tokens')}
-              >
-                personal access tokens
-              </a>{' '}
-              and create one with the{' '}
-              <span className="underline font-extrabold text-yellow-500">
-              </span>
-              scopes.
-            </>
-          }
         />
 
         <FieldInput
@@ -87,7 +72,7 @@ export const LoginRoute: React.FC = () => {
           type="submit"
           title="Submit Button"
         >
-          Submit
+          Login
         </button>
       </form>
     );
@@ -101,12 +86,14 @@ export const LoginRoute: React.FC = () => {
         <span className='font-normal text-sm'>Fill in the values below to get started!</span>
       </div>
 
-      <Form
-        onSubmit={submit}
-        // validate={validate}
-      >
-        {renderForm}
-      </Form>
+      <div className="flex flex-row justify-center items-center">
+        <Form
+          onSubmit={submit}
+          // validate={validate}
+        >
+          {renderForm}
+        </Form>
+      </div>
     </div>
   );
 };
