@@ -66,7 +66,7 @@ export const LoginRoute: React.FC = () => {
         />
 
         <button
-          className="float-right px-4 py-2 my-4 bg-gray-300 font-semibold rounded text-sm text-center hover:bg-gray-500 hover:text-white dark:text-black focus:outline-none"
+          className="float-right px-4 py-2 my-4 bg-white font-semibold rounded text-sm text-center dark:text-black focus:outline-none"
           disabled={submitting || pristine}
           type="submit"
           title="Submit Button"
