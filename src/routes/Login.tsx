@@ -63,7 +63,6 @@ export const LoginRoute: React.FC = () => {
           name="hostname"
           label="Hostname"
           placeholder="github.company.com"
-          helpText="Defaults to github.com. Change only if you are using GitHub for Enterprise."
         />
 
         <button
@@ -86,7 +85,7 @@ export const LoginRoute: React.FC = () => {
         <span className='font-normal text-sm'>Fill in the values below to get started!</span>
       </div>
 
-      <div className="flex flex-row justify-center items-center">
+      <div className="flex flex-row justify-center items-center px-10">
         <Form
           onSubmit={submit}
           // validate={validate}
